@@ -106,7 +106,7 @@
 <body>
 <div class="container">
     <h1>Редактирование пользователя</h1>
-    <form action="#" th:action="@{/editUser}" th:object="${user}" method="post">
+    <form action="#" th:action="@{/users/update(id=${user.id})}" th:object="${user}" method="post">
         <div>
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" required/>

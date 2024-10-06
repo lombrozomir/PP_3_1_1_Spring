@@ -133,8 +133,9 @@
         <td th:text="${user.age}"></td>
         <td>
             <div class="button-container">
-                <a th:href="@{/editUser(id=${user.id})}" class="button-edit">Редактировать</a>
-                <form th:action="@{/deleteUser}" method="post" style="display: inline">
+                <a th:href="@{/users/update(id=${user.id})}" class="button-edit">Редактировать</a>
+                <a th:href="@{/users/read(id=${user.id})}" class="button-edit">Информация о пользователе</a>
+                <form th:action="@{/users/delete(id=${user.id})}" method="post" style="display: inline">
                     <input type="hidden" name="id" th:value="${user.id}"/>
                     <button type="submit" class="button-delete">Удалить</button>
                 </form>
@@ -144,7 +145,7 @@
     </tbody>
 </table>
 <div style="text-align: center;">
-    <a href="/addUser" class="button">Добавить нового пользователя</a>
+    <a href="/users/add" class="button">Добавить нового пользователя</a>
 </div>
 </body>
 </html>
